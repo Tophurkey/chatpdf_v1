@@ -15,10 +15,10 @@ def SqlAgentAnswer(topK, question, embeddingModelType, value):
     os.environ['OPENAI_API_KEY'] = OpenAiKey
 
     try:
-        endpoint = endpoint
-        connection_string = connection_string
+        endpoint = "https://chat-nosql.documents.azure.com:443/"
+        connection_string = "https://chat-nosql.documents.azure.com:443/;AccountKey=RJldZD68XeFmRoKFQzcdq5Zmo9xVwifLiUAN71zkqLp1ZY2wy1u4WRNB3m0P3c804st8jWoLGR2SACDb1R5ESw==;"
         client = CosmosClient.from_connection_string(connection_string)
-        database_name = database_name
+        database_name = "chatPDF"
         db = client.get_database_client(database_name)
 
         # SqlPrefix = """You are an agent designed to interact with NoSql database systems (Azure Cosmos DB).
